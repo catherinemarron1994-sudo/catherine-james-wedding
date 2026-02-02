@@ -6,7 +6,7 @@ export default function Home() {
     },
     {
   title: "Pin Needed for Photos: 4260",
-  url: "#"
+  type: "info"
     },
     {
       title: "Cayman Professional Photos",
@@ -42,18 +42,32 @@ export default function Home() {
         </h1>
 
         <div className="flex flex-col gap-6">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block border border-white px-8 py-4 text-xl font-light text-white transition-all duration-300 hover:bg-white hover:text-black md:text-2xl"
-              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.5px" }}
-            >
-              {link.title}
-            </a>
-          ))}
+          {links.map((link, index) => {
+  if (link.type === "info") {
+    return (
+      <div
+        key={index}
+        className="px-8 py-3 text-lg text-white opacity-80"
+        style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.5px" }}
+      >
+        {link.title}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      key={index}
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block border border-white px-8 py-4 text-xl font-light text-white transition hover:bg-white hover:text-black"
+      style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.5px" }}
+    >
+      {link.title}
+    </a>
+  );
+})}
         </div>
       </div>
     </div>
