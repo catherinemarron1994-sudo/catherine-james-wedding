@@ -5,6 +5,10 @@ export default function Home() {
       url: "https://www.theknot.com/us/catherine-marron-and-james-hutchings-2025-08-06"
     },
     {
+  title: "Pin Needed for Photos: 4260",
+  url: "#"
+    },
+    {
       title: "Cayman Professional Photos",
       url: "https://my.guestpix.com/guest/121507/gallery?album=31815"
     },
